@@ -26,13 +26,8 @@ if (!defined('IN_AKKAR')) {
 	exit('Access violation.');
 }
 
-/*$q = rand(0, 2);
-$sqlusersel = $sqluser[$q];
-$sqlpasswdsel = $sqlpasswd[$q];
-unset($q);
-*/
 # Establish the MySQL connection and select our database
-$connection = mysqli_connect($sqlserver, $sqluser[0], $sqlpasswd[0], $sqlbase) or exit(mysqli_error());
+$connection = mysqli_connect($sqlserver, $sqluser, $sqlpasswd, $sqlbase) or exit(mysqli_error());
 
 ##################################
 # Funksjoner for rollebehandling #
