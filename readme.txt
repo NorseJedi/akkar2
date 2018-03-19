@@ -1,4 +1,7 @@
+NOTE: Akkar 2.x is no longer being developed. A v3 is in development and will have all new code.
+This code is only here for minor bugfixes and changes while waiting for Akkar3.
 
+###############################################################################
                             AKKAR 2.4
                   http://akkar.sourceforge.net/
 
