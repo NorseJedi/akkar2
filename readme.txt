@@ -1,5 +1,15 @@
-NOTE: Akkar 2.x is no longer being developed. A v3 is in development and will have all new code.
-This code is only here for minor bugfixes and changes while waiting for Akkar3.
+NOTE: Akkar 2.x is no longer being developed. A v3 is in development and will have 
+all new code. This code is only here for minor bugfixes and changes while waiting 
+for Akkar3.
+
+
+To install this version - which you are doing completely at your own risk - you 
+only need to copy the contents of the akkar directory to where you want to 
+install, and then point your browser to the install.php file on your webserver 
+URL.
+
+No, it's not pretty, and it's old, but it works. Kind of.
+
 
 ###############################################################################
                             AKKAR 2.4
