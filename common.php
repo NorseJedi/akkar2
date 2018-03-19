@@ -239,7 +239,7 @@ $config = get_configuration();
 
 # Legacy from older versions where an upgraded-flag was set to show it had been upgraded. Stupid design, obviosuly, which is why we no longer do this ;)
 if ($config['upgraded']) {
-	mysql_query("DELETE FROM ".$table_prefix."_config WHERE name='upgraded'", $connection);
+	mysqli_query($connection, "DELETE FROM ".$table_prefix."_config WHERE name='upgraded'");
 }
 
 # Sort the configuration array (we don't really need this since the configuration-page isn't generated dynamically anymore, but it doesn't hurt anyway)
@@ -316,10 +316,10 @@ if (($_SESSION['failed_attempt']) && ($_SESSION['failed_attempt'] >= $config['ma
 		$brukernavn = trim($brukernavn);
 
 		// If the last admin user is locked, we're in trouble.
-		$brukersql = mysql_query("SELECT person_id FROM `".$table_prefix."brukere` WHERE brukernavn='".$brukernavn."'", $connection) or exit(mysql_error());
-		$tuple = mysql_fetch_row($brukersql);
+		$brukersql = mysqli_query($connection, "SELECT person_id FROM `".$table_prefix."brukere` WHERE brukernavn='".$brukernavn."'") or exit(mysqli_error());
+		$tuple = mysqli_fetch_row($brukersql);
 		if ($tuple && !is_last_admin($tuple[0])) {
-			mysql_query("UPDATE `".$table_prefix."brukere` SET locked=1 WHERE brukernavn='".$brukernavn."'", $connection) or exit(mysql_error());
+			mysqli_query($connection, "UPDATE `".$table_prefix."brukere` SET locked=1 WHERE brukernavn='".$brukernavn."'") or exit(mysqli_error());
 		}
 	}
 	# Send an email to the administrator

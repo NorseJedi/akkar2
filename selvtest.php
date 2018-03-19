@@ -271,16 +271,16 @@ echo '<table cellpadding="0" class="bordered" style="margin-top: 2em;background-
 		<td nowrap="nowrap"><strong>'.$LANG['MISC']['php_extensions'].':</strong></td><td>'.$loaded_extensions.'</td>
 	</tr>
 	<tr>
-		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_server_version'].':</strong></td><td>MySQL '.mysql_get_server_info($connection).'</td>
+		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_server_version'].':</strong></td><td>MySQL '.mysqli_get_server_info($connection).'</td>
 	</tr>
 	<tr>
-		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_client_version'].':</strong></td><td>MySQL '.mysql_get_client_info().'</td>
+		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_client_version'].':</strong></td><td>MySQL '.mysqli_get_client_info().'</td>
 	</tr>
 	<tr>
-		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_host_info'].':</strong></td><td>'.mysql_get_host_info($connection).'</td>
+		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_host_info'].':</strong></td><td>'.mysqli_get_host_info($connection).'</td>
 	</tr>
 	<tr>
-		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_protocol_version'].':</strong></td><td>'.mysql_get_proto_info($connection).'</td>
+		<td nowrap="nowrap"><strong>'.$LANG['MISC']['sql_protocol_version'].':</strong></td><td>'.mysqli_get_proto_info($connection).'</td>
 	</tr>
 </table>';
 
