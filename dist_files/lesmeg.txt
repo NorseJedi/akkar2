@@ -1,0 +1,200 @@
+
+                            AKKAR 2.4
+                  http://akkar.sourceforge.net/
+							
+###############################################################################
+
+SYSTEMKRAV
+
+PHP 4.3 eller nyere (http://www.php.net/)
+Påkrevde extensions: zlib, gd2, mysql
+Anbefalte extensions: exif, iconv, mbstring
+Anbefalte kompilerings-valg: --enable-calendar
+
+MySQL 3.23 eller nyere
+http://www.mysql.com/
+
+En webserver
+Apache anbefales - http://www.apache.org/
+
+En nettleser som respekterer W3C-standardene, og har støtte for JavaScript og
+cookies Firefox anbefales - http://www.mozilla.com/firefox/
+
+AKKAR har også blitt testet og har fungert med PHP 5.x og MySQL 4.x. Støtten
+for MySQL 5.x er ennå ikke ferdigtestet, så bruk den på eget ansvar.
+
+###############################################################################
+
+VIKTIG FOR WINDOWS-INSTALLASJONER
+
+Spesiell info for Windows-installasjoner:
+    - Under installasjon av php på Windows XP med Apache webserver trengs
+følgende php-biblioteker å legges til:
+      extension=php_mbstring.dll
+      extension=php_exif.dll
+      extension=php_gd2.dll
+      extension=php_mysql.dll
+      Det er videre viktig at php_mbstring.dll må lastes før php_exif ellers så
+får man feil i Apache. De er oppført i feil rekkefølge i listen som følger med
+php.ini.
+
+- I tillegg bør dette innlegget
+(http://akkar.sourceforge.net/forum/index.php?topic=41.0) på forumet leses i
+forbindelse med PHP på Windows.
+ 
+###############################################################################
+
+OPPSETT AV DATABASEN OG BRUKERKONTOEN
+
+Å sette opp databasen og brukerkontoen for AKKAR er ganske enkelt, men om du
+ikke har noe kjennskap til MySQL og installerer på din egen server (dvs. du
+bruker ikke en formfor webhotell), og heller ikke har noe grafisk verktøy som
+kan gjøre jobben for deg, kan du følge disse instruksjonene.
+
+For det første må du starte kommandolinje-klienten for MySQL og logge inn med
+en bruker som har administrator-rettighetern - dette er som regel brukeren
+"root", og denne har ikke noe passord ved en ny MySQL-installasjon - noe du
+absolutt burde gjøre noe med, men det tar jeg ikke for meg her siden alle
+instrukser som tar for seg installasjon av MySQL dekker dette.
+
+Først starter du altså klienten og logger inn, alt med denne kommandoen:
+mysql -u root -p
+Eller, om root ikke har passord:
+mysql -u root
+
+Du vil få opp "mysql>" kommandolinjen, og det er her du skriver inn kommandoer
+til database-serveren. Det første som må gjøres er å opprette selve databasen,
+noe du gjør slik (bytt ut "navnpådatabasen" med det navnet du vil bruke):
+
+CREATE DATABASE navnpådatabasen;
+
+Når dette er gjort må brukerkontoen AKKAR skal benytte opprettes og gis de
+nødvendig rettighetene. Dette gjør du slik (bytt ut "navnpådatabasen" med det
+du brukte over, og bytt utt "brukernavn" og "passord" med de verdiene du faktisk
+ønsker å bruke - ja, dette er i grunn veldig innlysende :P):
+
+GRANT ALL PRIVILEGES ON nameofmydatabase.* TO 'akkarusername'@'localhost' IDENTIFIED BY 'akkarpassword' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON nameofmydatabase.* TO 'akkarusername'@'%' IDENTIFIED BY 'akkarpassword' WITH GRANT OPTION;
+
+I de fleste tilfeller holder det å bruke den første av disse to linjene, men
+dersom installasjons-skriptet i AKKAR klager på "access denied" kan du skrive
+inn den andre også.
+
+Etter at du har lagt inn en eller begge linjene over må endringene aktiveres
+umiddelbart, noe du gjør slik:
+
+FLUSH PRIVILEGES;
+
+Du kan da lukke MySQL-klientprogrammet ved å bare skrive "EXIT".
+
+Alt burde nå være klart for å utføre selve installasjonen av AKKAR.
+
+###############################################################################
+
+INSTALLASJON AV AKKAR
+
+1. Pakk ut AKKAR fra arkivet:
+Linux: tar fzxv akkar-x.y.z.tar.gz
+Windows: bruk WinZip e.l.
+
+2. Opprett directoryet hvor AKKAR skal ligge.
+
+3. Kopier alt innholdet i akkar-underdirectoryet til directoryet du opprettet
+
+4. Sørg for at følgende directories er skrivbare av webserveren:
+filesystem/
+images/personer/
+tmp/
+conf/
+
+5. Av sikkerhetsmessige årsaker bør webserveren nekte tilgang til alle filer i
+følgende directory:
+filesystem/
+tmp/
+conf/
+Alle filene her leses inn av PHP-skriptene, så nettleseren selv trenger ikke
+tilgang til dem. Dersom du bruker Apache som webserver vil dette tas hånd om
+automatisk ved hjelp av .htaccess-filer som følger med i de riktige katalogene.
+
+6. Åpne nettleseren og åpne install.php i directoryet hvor du la AKKAR (eks.
+http://www.example.com/akkar/install.php). Fyll ut informasjonen og klikk
+"Fortsett".
+
+7. Dersom AKKAR ikke greier å opprette grunnkonfigurasjonsfila selv vil du få
+beskjed om dette. Da må du laste ned fila og lagre den i directoryet "conf"
+hvor du installerte AKKAR.
+
+8. Slett fila install.php og upgrade.php fra directoryet hvor du installerte
+AKKAR.
+
+9. Åpne nettleseren og gå til directoryet hvor du installerte. Logg inn med
+brukernavnet og passordet du angav under installasjonen.
+
+10. Logg inn og gå til Konfigurasjons-skjermen i AKKAR og fullfør
+konfigurasjonen der.
+
+That's it folks! AKKAR er klar til bruk :)
+
+
+###############################################################################
+
+OPPGRADERING FRA AKKAR 2.2.x
+
+Oppgradering fra en tidligere 2.2-versjon er relativt trivielt. Bare gjør 
+følgende:
+
+1. Pakk ut AKKAR-arkivet
+
+2. Kopier alt fra akkar-underdirectoryet til det hvor AKKAR er installert, sørg
+for at du overskriver alle filer.
+
+3. Åpne nettleseren din og gå til hvor du har AKKAR installert. Klikk 
+"Upgrade"-knappen.
+
+4. Slett upgrade.php og install.php fra AKKAR-directoryet.
+
+Det er alt :)
+
+###############################################################################
+
+OPPGRADERING FRA RASLAV 2.0.x
+
+Endel ting har blitt nytt siden RAsLAV, og det er endel tillegg som kan kreve
+litt manuell oppdatering. Dette gjelder i hovedsak bilder av personer, samt
+kjønn på personene. For å sette kjønn må du rett og slett redigere personene
+en etter en. Bildene er antakeligvis litt enklere siden oppdaterings-skriptet
+vil gå gjennom alle tilgjengelige bilder og finne ut hvem det er bilde av basert
+på personenes navn og bildenes filnavn (bildene skal ha blitt gitt noenlunde
+samme navn som spilleren de tilhører). Dersom en person har flere bilder kan
+man administrere dette ved å klikke knappen "Bilder" på person-arket.
+
+Se forøvrig versions.txt for en fullstendig liste over nye og endrede
+funksjoner.
+
+Selve oppgraderingen gjøres slik:
+
+1. Ta sikkerhetskopi av alt du har lagt inn. Dersom noe går galt under
+oppgraderingen kan alt bli ødelagt. Siden RASLAV bare lar deg ta backup av
+selve databasen må du selv ta kopier av directoryene images/personer/ og
+filsystemet.
+
+2. Pakk ut AKKAR 2.2. Kopier alt innholdet fra akkar-underdirectoryet i AKKAR 
+2.2 til directoryet hvor RAsLAV ble installert. Det anbefales at du sletter 
+absolutt alt av RAsLAV unntatt de directoryene hvor du har opprettet filer 
+(dersom du bare har latt RAsLAV opprette filer betyr det at du må la 
+directoryene images/personer/, conf/ og filsystem/ være intakte - HVA DU ENN 
+GJØR, IKKE SLETT conf-DIRECTORYET). Dersom du ikke sletter noe må du sørge for 
+at de nye filene overskriver de gamle. Mange filer har blitt flyttet eller 
+slettet mellom 2.0 og 2.2 så dersom du ikke sletter noe ender du opp med flere 
+overflødige filer. Dette vil ikke skape noen problemer annet enn at du vil 
+bruke mer diskplass enn hva som er nødvendig.
+
+3. Åpne upgrade.php med nettleseren din (f.eks. 
+http://www.example.com/akkar/upgrade.php) og klikk knappen "Upgrade". Dette vil 
+utføre alle nødvendig operasjoner uten at du trenger å fylle ut noe informasjon.
+
+4. Når du er ferdig må du slette både upgrade.php og install.php fra 
+installasjons-directoryet (om AKKAR har de rette filrettighetene vil dette bli 
+gjort automatisk). AKKAR vil ikke kjøre dersom noen av disse to eksisterer.
+
+Det er alt. RAsLAV skal nå være historie, og AKKAR skal være operativt :)

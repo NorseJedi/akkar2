@@ -1,0 +1,368 @@
+/* common_style.css
+Dette stilarket benyttes av alle nettlesere.
+
+Se generic_style.css og iespecific_style.css for
+stiler som avviker mye fra IE/Opera og andre nettlesere.
+/*
+
+/* Linker */
+a {
+	color: #ffcccc;
+	font-weight: bold;
+	background-color: transparent;
+}
+
+/* Selve linken på knappene. Benyttes nesten overalt */
+a.button, a.redbutton {
+	color: #ffffff;
+}
+
+/* Samme som over, men for de røde knappene */
+a.redbutton:hover {
+	color: #000000;
+}
+
+/* Linker generelt */
+a:link, a:visited { 
+	text-decoration: none;
+}
+
+/* Linker i navigeringa */
+a.nav {
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: transparent;
+}
+
+a.nav:hover {
+	color: #ffcc00;
+}
+
+/* Linker når pekeren er over dem og når de klikkes på */
+a:hover, a:active {
+	text-decoration: none;
+	color: #ffcc00;
+}
+
+/* Linkene i navigeringa når gjeldende linkmål er åpnet */
+a.activenav {
+	font-size: 7pt;
+	text-decoration: none;
+	color: #ffcc00;
+}
+
+/* Generell definisjon for dokumentet */
+body {
+	color: #f0f0f0;
+	font-family : "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	background: #000;
+	background-image: url("stjerne.png");
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0px;
+}
+
+/* Hovedtabellen - den som inneholder hele sida */
+table.main {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* banner: Banner-cella i hovedtabellen */
+td.banner {
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* navbar: cella i hovedtabellen som inneholder navigasjonen */
+td.navbar {
+	vertical-align: top;
+	width: 10%;
+	padding-right: 20px;
+}
+
+.highlight {
+	background-color: #494444;
+	font-weight: bold;
+}
+
+/* De elementer som har helramme */
+.bordered {
+	border: 2px groove #cccc99;
+}
+
+/* Elementer som har topp-ramme */
+.bt {
+	border-top: groove 2px #cccc99;
+}
+/* Elementer som har bunn-ramme */
+.bb {
+	border-bottom: groove 2px #cccc99;
+}
+/* Elementer som har venstre-ramme */
+.bl {
+	border-left: groove 2px #cccc99;
+}
+/* Elementer som har høyre-ramme */
+.br {
+	border-right: groove 2px #cccc99;
+}
+
+.bs {
+	border-right: groove 2px #cccc99;
+	border-left: groove 2px #cccc99;
+}
+
+/* Ting som skal sentreres */
+.center {
+	text-align: center;
+}
+
+/* naventry: Navigeringslink i navigeringa */
+td.naventry {
+	font-size: 9pt;
+	color: #ffffff;
+	background-color: #111111;
+	font-weight: normal;
+}
+
+/* navend: Den nederste cella i hver navigerings-seksjon */ 
+td.navend {
+	font-size: 9pt;
+	color: #ffffff;
+	background-color: #111111;
+	font-weight: normal;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* stjerne-*: Kanter til vinduene */
+td.stjerne-topp, td.stjerne-bunn, td.stjerne-tv, td.stjerne-th, td.stjerne-bv, td.stjerne-bh {
+	height: 20px;
+	line-height: 20px;
+	padding: 0;
+}
+
+td.stjerne-venstre, td.stjerne-hoyre, td.stjerne-tv, td.stjerne-th, td.stjerne-bv, td.stjerne-bh {
+	width: 20px;
+	max-width: 20px;
+	padding: 0;
+}
+
+table.stjerne-nav {
+	width: 180px;
+}
+
+td.stjerne-tv {
+	background-image: url("stjerne-tv.png");
+}
+
+td.stjerne-th {
+	background-image: url("stjerne-th.png");
+}
+
+td.stjerne-topp {
+	background-image: url("stjerne-topp.png");
+}
+
+td.stjerne-venstre {
+	background-image: url("stjerne-venstre.png");
+}
+
+td.stjerne-hoyre {
+	background-image: url("stjerne-hoyre.png");
+}
+
+td.stjerne-bv {
+	background-image: url("stjerne-bv.png");
+}
+
+td.stjerne-bh {
+	background-image: url("stjerne-bh.png");
+}
+
+td.stjerne-bunn {
+	background-image: url("stjerne-bunn.png");
+}
+
+td.stjerne-midt {
+	background-color: #606060;
+	width: auto;
+	padding: 0;
+}
+
+td.maincol td.stjerne-midt {
+	padding-bottom: 10px;
+}
+
+td {
+	vertical-align: top;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+td.tooltip {
+	padding: 0;
+	margin: 0;
+}
+
+/* Celler som bare inneholder knapper tilhører denne klassen for at de ikke skal bli for store */
+td.nospace {
+	margin: 0;
+	padding: 0;
+}
+
+/* Tabellen for bunnen av sida */
+table.bottom {
+	font-size: 9pt;
+}
+
+/* TD for bunnen av sida */
+td.bottom {
+	vertical-align: top;
+	font-size:8pt;
+}
+
+h6 {
+	color: #fff;
+	margin: 0;
+	font-size: 8pt;
+}
+
+h5 {
+	color: #fff;
+	margin: 0;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+h4 {
+	color: #fff;
+	margin-bottom: 0;
+	margin-top: 1em;
+	font-size: 10pt;
+}
+
+/* H4 brukes av og til inne i tabeller. Her slår vi av den ovenfor definerte topp-marginen for den */
+h4.table {
+	margin: 0;
+}
+
+h3 {
+	color: #fff;
+	margin: 0;
+	font-size: 12pt;
+}
+
+h2 {
+	color: #fff;
+	margin: 0;
+	font-size: 16pt;
+}
+
+h1 {
+	color: #fff;
+	margin: 0;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+/* Fjerne rammer rundt bilder som også er linker, om det er noen */
+a img {
+	border: 0;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
+
+/* Tekst som skal være mindre, f.eks. små anekdoter og andre ting */
+.small {
+	font-size: 8pt;
+}
+
+select {
+	font-size: 8pt;
+}
+
+input, textarea, select {
+	border: 1px solid #cccc99;
+	color: #cccc99;
+	background-color: #602009;
+	background-image: url("inputbg.png");
+	font-family: "Trebuchet MS", Verdana, "Luxi Sans", sans-serif;
+	font-size: 8pt;
+	margin-right: 4px;
+}
+
+/* Filterboxes are the input-fields for filtering various listss */
+input.filterbox {
+	font-size: 7pt;
+	font-weight: bold;
+}
+
+textarea {
+	font-size: 8pt;
+}
+
+.tiny {
+	font-size: 8pt;
+}
+
+/* Elementer med "grønn" tekst (stort sett diverse statusmeldinger) */
+.green {
+	color: #40d340;
+	font-weight: bold;
+}
+
+.red {
+	color: #ad0000;
+}
+
+table.statuswindow {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 140px;
+	text-align: center;
+	border: 1px solid #cccc99;
+	background-color: transparent;
+	font-size: 8pt;
+}
+
+.selectname {
+	margin-bottom: 0.5em;
+	font-style: italic;
+}
+
+/* Kalenderstiler */
+
+#kalidag {
+	background-color: #765454;
+}
+
+#kaldenneuke {
+	background-color: #543232;
+}
+
+.kalmerkedag {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.kalhelligdag {
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.kaldagtittel {
+	font-size: 7pt;
+}

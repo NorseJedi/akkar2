@@ -1,0 +1,109 @@
+
+                           STYLES IN AKKAR
+
+The styles in AKKAR are all put into separate stylesheets in directories 
+named after the name of the style. Within that directory are all the files
+tied to the style, as well as several images. By all rights, the styles
+should probably be called themes instead.
+
+The files are:
+
+STYLESHEETS
+
+common.css
+The common stylesheet used by all browsers
+
+iestyle.css
+The stylesheet used by Internet Explorer in addition to common.css
+
+operastyle.css
+The stylesheet used by Opera in addition to common.css
+
+style.css
+The stylesheet used by all other browsers in addition to common.css. It is 
+also used by default in case any of iestyle.css or operastyle.css are missing.
+
+print.css
+The stylesheet used for printer-friendly versions of the pages
+
+IMAGES
+
+logo.png
+The toplogo used in AKKAR.
+
+logo_bw.png
+The toplogo used in print-friendly pages.
+
+dot.png, nodot.png, dot_print.png, nodot_print.png
+The graphic used to display dots in sheets using a template with the "dots" 
+fieldtype.
+
+tinyarrow_up.png and tinyarrow_down.png
+The graphic used for sorting-links in various lists (previously AKKAR used the
+HTML entities &dArr; and &uArr; for this, but IE doesn't support them).
+
+info.png, help.png, deadline.png, task.png
+Graphics used as clickable icons in several places.
+
+no_mugshot_f.png, no_mugshot_m.png, no_mugshot_f_print.jpg, no_mugshot_m_print.jpg
+Images used as default person mugshots. The print ones are used for document exports 
+only and has to be a jpg image. The regular mugshots can be png, jpg or gif.
+mugshot_f is used for female, mugshot_m is used for male.
+
+icon_cdup.png, icon_audio.png, icon_binary.png, icon_dir.png, icon_image.png
+icon_text.png, icon_video.png, icon_zip.png
+These are used as icons in the filesystem. icon_cdup is used only for linking
+to the parent directory, the rest are used for the files of the appropriate type.
+These should be kept small or the filesystem display will become very cluttered
+very fast.
+
+symb_male.png, symb_female.png
+Symbols for male and female. There's also an symb_unknown_gender.png, but since
+gender is a required field and gets validated clientside it's mostly useless. It's
+only there for those who upgraded from RAsLAV 2.0 as pre-2.2 did not have a gender-
+field.
+
+BUTTONS (new in v2.4.0)
+
+Navigation buttons within AKKAR can now be replaced with graphics rather than the
+HTML buttons previously used. In order to do this, the buttons must be located in
+a subdir of the style directory named after the shorthand of the configured language
+(ex. styles/default/en/ or styles/default/nor).
+If a specific button is missing an HTML button will be drawn instead.
+
+For all images in a style, you can use either a PNG, JPG or GIF image. The 
+only exceptions are pictures named like "_print", which can not be in GIF
+format. It's generally a good idea to avoid GIF's entirely anyway, as there are
+licensing-issues with the format. PNG and JPG are strongly favoured. AKKAR will 
+first look for PNG images, next JPG, and lastly GIF's, so if you have both a PNG 
+and a JPG of a given image in the directory, the PNG will be used.
+
+You'll probably be able to use the graphics from one of the styles that
+are included with AKKAR (except maybe the logos), just make sure you use 
+one with a colour that's visible in your lists and sheets.
+
+If you want to make your own style, simply copy the directory containing the
+style you want to use as a basis and give it the name of your new style. Then
+make the changes and adjustments you want to use. It's important that you don't
+edit any of the existing styles as they will be overwritten next time you upgrade 
+AKKAR to a new release.
+
+If you leave out any of the images, the relevant image from the default style 
+will be used.
+
+The stylesheets in the default style are the only ones completely commented, 
+so it's reccomended that you use those as a basis for your own style.
+
+CUSTOM HEADERS (new in v2.4.0)
+
+This option is for advanced users only.
+
+If your style includes border graphics, or you wish to insert some custom
+headers for any other reason, you can override the default headers. If the
+files mainheader.php and/or mainfooter.php exist in your style directory
+(i.e. styles/mystyle/mainheader.php and styles/mystyle/mainfooter.php),
+they will completely override the default templates/mainheader.php and
+templates/mainfooter.php.
+
+It is HIGHLY RECOMMENDED that you make copies of templates/mainheader.php and
+templates/mainfooter.php and modify them, or you might be in trouble.

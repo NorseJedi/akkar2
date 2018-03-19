@@ -1,0 +1,179 @@
+/*
+###########################################################################
+#                                  AKKAR                                  #
+#                      http://akkar.sourceforge.net/                      #
+#                                                                         #
+#                            -------------------                          #
+#                                print.css                                #
+#                            -------------------                          #
+#                                                                         #
+#   copyright (C) 2004 Roy W. Andersen                                    #
+#   email: ensnared@gmail.com                                             #
+#                                                                         #
+###########################################################################
+
+###########################################################################
+#                                                                         #
+#  This program is free software; you can redistribute it and/or modify   #
+#  it under the terms of the GNU General Public License as published by   #
+#  the Free Software Foundation; either version 2 of the License, or      #
+#  (at your option) any later version.                                    #
+#                                                                         #
+###########################################################################
+*/
+/*
+This style is used for printer-friendly viewing
+*/
+
+/* Links */
+a:active, a:hover, a:visited, a:link {
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+/* Body element */
+body {
+  font-size: 10pt;
+}
+
+img {
+	border: 0;
+}
+
+h6 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+h4 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* Elements with a full border */
+.bordered {
+	border: 2px groove #cccccc;
+}
+
+/* Elements with a border on the top */
+.bt {
+	border-top: 2px groove #cccccc;
+}
+/* Elements with a border on the bottom */
+.bb {
+	border-bottom: 2px groove #cccccc;
+}
+/* Elements with a border on the left */
+.bl {
+	border-left: 2px groove #cccccc;
+}
+/* Elements with a border on the right */
+.br {
+	border-right: 2px groove #cccccc;
+}
+/* Elements with a border on both sides */
+.bs {
+	border-right: 2px groove #cccccc;
+	border-left: 2px groove #cccccc;
+}
+
+td {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	vertical-align: top;
+}
+
+/* Highlighted elements (listheaders and certain other boxes */
+.highlight {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	font-size: 11pt;
+	text-align: left;
+}
+
+tr {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+table {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+td.banner {
+	text-align: center;
+}
+
+td.tooltip {
+	margin: 0;
+	padding: 0;
+}
+
+td.bottom {
+  padding-top: 2em;
+  text-align: center;
+}
+
+/* Hide form-elements from printing */
+button,select,.noprint {
+	display: none;
+	visibility: hidden;
+}
+
+/* Kalenderstiler */
+
+/* Calendar cell "today" */
+#kalidag {
+	background-color: #cccccc;
+}
+
+/* Calendar cell "this week" */
+#kaldenneuke {
+	background-color: #cccccc;
+	font-weight: bold;
+}
+
+/* Calendar cell for traditional days */
+.kalmerkedag {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* Calendar cell for holidays */
+.kalhelligdag {
+	font-weight: bold;
+	color: #ff0000;
+}
+
+/* The name of the day */
+.kaldagtittel {
+	font-size: 7pt;
+}

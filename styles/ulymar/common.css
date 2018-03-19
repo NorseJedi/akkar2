@@ -1,0 +1,331 @@
+/*
+###########################################################################
+#                                  AKKAR                                  #
+#                      http://akkar.sourceforge.net/                      #
+#                                                                         #
+#                            -------------------                          #
+#                                common.css                               #
+#                            -------------------                          #
+#                                                                         #
+#   copyright (C) 2004 Roy W. Andersen                                    #
+#   email: ensnared@gmail.com                                             #
+#                                                                         #
+###########################################################################
+
+###########################################################################
+#                                                                         #
+#  This program is free software; you can redistribute it and/or modify   #
+#  it under the terms of the GNU General Public License as published by   #
+#  the Free Software Foundation; either version 2 of the License, or      #
+#  (at your option) any later version.                                    #
+#                                                                         #
+###########################################################################
+*/
+/* common.css
+Stylesheet used by all browsers.
+/*
+
+/* Links */
+a {
+	color: #FFCC99;
+	font-weight: bold;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #FFCC66;
+	background-color: transparent;
+}
+
+/* Navbar links */
+a.nav {
+	font-size: 7pt;
+	color: #FFCC99;
+	background-color: transparent;
+}
+
+a.nav:hover { 
+	color: #FFCC66;
+	background-color: transparent;
+}
+
+/* Active navbar links */
+a.activenav {
+	font-size: 7pt;
+	color: #FFCC66;
+	background-color: transparent;
+}
+
+/* General body style */
+body {
+	color: #000000;
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	background: #013300;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0px;
+}
+
+/* The main table - the page itself is contained within this table */
+table.main {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* The top banner-cell of the main table */
+td.banner {
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* The cell containing the navigationbar */
+td.navbar {
+	vertical-align: top;
+	width: 10%;
+	padding-right: 20px;
+}
+
+/* Elements with complete border */
+.bordered {
+	border: 2px groove #FFCC99;
+}
+
+/* Elements with a border on the top */
+.bt {
+	border-top: 2px groove #FFCC99;
+}
+/* Elements with a border on the bottom */
+.bb {
+	border-bottom: 2px groove #FFCC99;
+}
+/* Elements with a border on the left */
+.bl {
+	border-left: 2px groove #FFCC99;
+}
+/* Elements with a border on the right */
+.br {
+	border-right: 2px groove #FFCC99;
+}
+
+/* Elements with a border on both sides */
+.bs {
+	border-right: 2px groove #FFCC99;
+	border-left: 2px groove #FFCC99;
+}
+
+/* Highlighted elements (listheaders and certain other boxes */
+.highlight {
+	background-color: #013300;
+	font-weight: bold;
+}
+
+/* Centered stuff */
+.center {
+	text-align: center;
+}
+
+/* Cell containing link in the navbar */
+td.naventry {
+	font-size: 8pt;
+	color: #000000;
+	background-color: #336633;
+	font-weight: normal;
+}
+
+/* Bottom cell of nav-sections */ 
+td.navend {
+	font-size: 8pt;
+	color: #FFCC99;
+	background-color: #336633;
+	font-weight: normal;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+td {
+	vertical-align: top;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+td.tooltip {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+/* Some cells needs this class to make them smaller */
+.nospace {
+	margin: 0;
+	padding: 0;
+}
+
+/* The table at the bottom of the page */
+table.bottom {
+	border-top: 1px #444444 solid;
+	font-size: 9pt;
+}
+
+/* Cell for the bottom of the page */
+td.bottom {
+	vertical-align: top;
+	font-size:8pt;
+}
+
+/* Various header definitions and paragraphs */
+h6 {
+	color: #FFCC99;
+	margin: 0;
+	font-size: 8pt;
+}
+
+h5 {
+	color: #FFCC99;
+	margin: 0;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+h4 {
+	color: #FFCC99;
+	margin-bottom: 0;
+	margin-top: 1em;
+	font-size: 10pt;
+}
+
+h3 {
+	color: #FFCC99;
+	margin: 0;
+	font-size: 12pt;
+}
+
+h2 {
+	color: #FFCC99;
+	margin: 0;
+	font-size: 14pt;
+}
+
+h1 {
+	color: #FFCC99;
+	margin: 0;
+	font-size: 16pt;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+/* Most H4 elements within tables gets their default top-margin turned off here */
+h4.table {
+	margin: 0;
+}
+
+
+/* Remove borders around linked images */
+a img {
+	border: 0;
+}
+
+/* List items */
+li {
+	margin-bottom: 0.5em;
+}
+
+/* Small and tiny text */
+.small {
+	font-size: 8pt;
+}
+
+.tiny {
+	font-size: 7pt;
+}
+
+/* Form elements */
+select {
+	font-size: 8pt;
+	background-color: #ffffff;
+}
+
+input {
+	font-size: 8pt;
+	background-color: #ffffff;
+}
+
+textarea {
+	font-size: 8pt;
+	background-color: #ffffff;
+}
+
+/* The first selection of a pulldown-box, used as a title for the box */
+.selectname {
+	margin-bottom: 0.5em;
+	font-style: italic;
+	text-align: center;
+}
+
+/* Filterboxes are the input-fields for the list-filters */
+input.filterbox {
+	font-size: 7pt;
+	font-weight: bold;
+}
+
+
+/* Green text (positive status-messages) */
+.green {
+	color: #33CC33;
+}
+
+/* Red text (negative status-messages) */
+.red {
+	color: #ff0000;
+}
+
+/* The (normally invisible) window at the top left showing certain status-messages */
+
+table.statuswindow {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 140px;
+	text-align: center;
+	border: 1px solid #444499;
+	background-color: transparent;
+	font-size: 8pt;
+}
+
+
+/* Styles for the calendar */
+
+/* Calendar cell "today" */
+#kalidag {
+	background-color: #339933;
+}
+
+/* Calendar cell "this week" */
+#kaldenneuke {
+	background-color: #339933;
+	font-weight: bold;
+}
+
+/* Calendar cell for traditional days */
+.kalmerkedag {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* Calendar cell for holidays */
+.kalhelligdag {
+	font-weight: bold;
+	color: #FF9966;
+}
+
+/* The name of the day */
+.kaldagtittel {
+	font-size: 7pt;
+}

@@ -1,0 +1,312 @@
+2.4.6
+CHANGES
+- Added a much requested "Reset Password" function. This will reset the password for any supplied username or e-mail address.
+
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- none
+
+2.4.5
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [martin] (#1576094) It was impossible to delete certain items containing ' due to a Javascript error.
+- [helge] (#1576842) After deleting a group, the screen would show "No Groups".
+- [helge] (#1576853) Downloading empty acquaintances lists would produce an error.
+- [helge] (#1578042) It was possible to delete or change the status of the last administrator, rendering the system unusable.
+
+2.4.4
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [helge] (#1573666) The player assignment dropdown lists were empty when editing a character.
+- [martin] (#1574347) Signup form generation wouldn't work in a template with "listmulti" fields.
+- [martin] (#1575045) Template fields couldn't be moved past deleted fields.
+- [helge] Dots didn't show in a signup form.
+- [helge] Calc fields weren't shown correctly in the signups list.
+
+2.4.3
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [helge] (#1528805) Fixed invalid HTML for tabindex in some buttons on the character edit-page.
+- [nina] (#1535494) Adding characters to groups would fail due to an error in the SQL statement.
+- [nina] (#1535501) The button for assigning a task to an organiser in the tasklist did not work.
+- [roy] When adding a new contact, the buttons at the top of the form (back/reset/save) would not appear - the text "$buttons" would be shown instead.
+- [helge] (#1545321) Fixed erroneous $fieldtitle listing in player registration lists.
+- [helge] (#1545320) Player link to characters and character concepts will now be reset if the player registration is dropped.
+- [nina] (#1535586) Directories in the filesystem can now be renamed again.
+- [roy] Template-fields were limited to 255 characters in their definitions.
+- [helge] (#1567257) Fixed display error in character suggestions.
+- [helge] (#1537548) Invalid submissions are no longer accepted.
+- [nina] Locale definitions would not work on Windows systems.
+- [kristian] (#1567623) Birth year in lists would show up as '$dato[0]'.
+- [helge] (#1536798) Fixed a number of cosmetic problems with the submission forms.
+- [helge] Character suggestions with no template fields would generate a foreach() error in the list view. Fixed.
+- [helge] Combo submission forms didn't work. Fixed.
+- [unni] (#1567527) mkfilename() didn't remove illegal characters in filenames, causing problems if a character name for example contained a slash (/).
+- [helge] (#1532040) Lines in PDF printouts would sometimes overlap. A newline is now inserted where appropriate.
+- [helge] Fixed a couple of bugs in upgrading from 2.0.3 => 2.4.3.
+- [helge] A cosmetic glitch in userinfo.php made the new files seem awkward if filenames had very different lengths.
+- [helge] The game summary page and the signups page would sometimes show different numbers. Elusive, but hopefully fixed.
+
+2.4.2
+CHANGES
+- New general styles: scifi and wod.
+- The starwars style has seen some changes.
+
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [helge] The Reply-To address in sendroller.php couldn't be changed if you sent only one character. Fixed.
+- [helge] Inserting empty strings into int(1) fields would cause problems with MySQL 5. Fixed.
+- [helge] Missing or antiquated GD versions will no longer produce unpredictable behaviour.
+- [helge] (#1527954) Sending a character by mail would add the whole filesystem as an attachment. Fixed.
+- [helge] (#1526363) Mass mailing now checks for errors; will retry five times on any failure.
+- [helge] (#1526363) Fixed a bug that would cause errors to appear in the registration form if sending mail failed for some reason.
+- [helge] foreach() would fail in several screens if a template had no fields.
+- [helge] (#1525291) The installation script insisted on inserting numeric post codes into a string column, which would produce erroneous results for all postcodes starting in 0. Fixed.
+- [helge] (#1525289) Backup would haphazardly insert numeric values in text columns and vice versa. Fixed.
+- [helge] (#1524426) Backup included extra tables unnecessarily. Fixed.
+- [helge] Fixed four functions calls in the payments screen that passed their argumentis explicitly by reference, causing newer versions of PHP to output a warning.
+- [helge] The self test was too restrictive when it came to the mbstring extension. Fixed.
+
+2.4.1
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [roy] Fixed a MySQL insert-error that would happen when selecting English language during installation.
+- [roy] Automatic region/zipcode-mapping could sometimes be ignored when creating a new person or contact.
+- [roy] Upgrading from 2.0.x (as if anyone would still need to do this) could result in the upgrade-script being deleted even if it was still needed to download the new config-file (oopsie...).
+- [roy] Turned off E_NOTICE error-reporting in the install and upgrade-scripts. This is done everywhere else through common.php, but that file isn't used when installing or upgrading.
+- [helge] A spelling error in one of the functions would make some buttons appear without an onclick event.
+- [helge] On PHP under IIS, installation would sometimes spend too much time on MySQL calls and time out. It still takes a lot of time, but no longer crashes.
+- [helge] Fixed a bug that made all buttons created with the button() function assume that the user wanted to change the window.location attribute.
+- [helge] Uploading files and creating directories would omit descriptions and produce an error message in some versions of MySQL.
+- [helge] On Windows/IIS, you could not upload any mugshots because is_file() failed for some reason. Substituted file_exists().
+
+2.4.0
+CHANGES
+- Tidied up the filesystem functions a bit so that they don't produce PHP errors and crash horribly when they fail.
+- A few navigational improvements between some pages.
+- New or updated files from the filesystem will now appear in the list of new or updated items in the users' Home.
+- You can now replace an existing file in the filesystem, thereby maintaining all attachment-relations to the file while replacing the contents of the file itself.
+- Importing character acquaintance relations from other games is now possible (individuals only - groups are unique on a global basis and hence can not be imported).
+- If an application or combo-form is submitted a mail with the submitted data will now also be dispatched to the address defined as the organizers email.
+- Added a big ugly glaring error-message for browsers without JavaScript-support (AKKAR _requires_ JavaScript - always has, always will).
+- FPDF updated to latest version (1.53).
+- overLib updated to latest version (4.21).
+- PclZip updated to latest version (2.5).
+- Added the "draggable" module to overLib, allowing tooltips to be dragged around the screen like a normal window.
+- Added the "fade" module to overLib as an option, making popups fade into view instead of simply appearing. This can be enabled or disabled in the main configuration - it is enabled by default.
+- Added a popup of the person's info and registration by clicking an icon next to the player's name in the character view.
+- Added a popup of the person's info by clicking an icon next to the organizer's name in the character view.
+- Internal changes to how person, registration and character sheets are generated and displayed. Files removed as result are templates/print_rolle.php and templates/print_person.php.
+- Person names in pulldown-lists should now be listed as "surname, firstname" for improved finding. They used to be displayed as "firstname surname" while being sorted by surname, which could make it difficult to locate names in longer lists.
+- Massive code formating cleanups that might speed up AKKAR somewhat. It's most likely insignificant, but it makes the code look better. Some files may not have been cleaned up yet, but most are. The cleanups done are:
+	- All strings are now enclosed by single quotes, preventing PHP from parsing them searching for variables.
+	- All PHP variables and arrays are now terminated if they appear inside strings.
+	- All arrays are now coded properly, where one used to have $array[key] in some places it's all now array['key'] which will prevent possible conflicts with any constants.
+- Extended the selftest to also include checking for missing extensions (gd, mbstring, iconv, calendar, exif and zlib).
+- Moved the MOTD-box to the top of the configuration page so one won't need to scroll down just to set a new MOTD.
+- Adding a new registration will now allow you to set the time of registration (defaults to the current date and time) and wether the registration is paid (previously you'd have to add the registration before being able to edit these values).
+- Added automatic instructions on how to perform an install or upgrade if one attempts to run a new AKKAR from a version checked out from SVN.
+- Added a default .htaccess-file to the main AKKAR directory which sets the http-post and file upload-size settings to 20Mb, which is a more reasonable limit than the PHP default (8Mb post/2Mb file) for filesystem uploads and - especially - restore-file upload.
+- Added plaintext exports of individual characters, acquaintances, groups as well as full printouts just like the PDF exports (except labels and envelopes).
+- Added some information about the OS, PHP and SQL versions in use on the selftest-page to make it easier to find out if any bug reported is a compatibility-issue. Let's hope people submit that information along with any bug-report (yes, that probably means you :p).
+- Added workaround if the iconv extension is not loaded, thanks to the excellent ConvertCharset PHP-class from http://mikolajj.republika.pl/ written by Mikolaj Jedrzejak <mikolajj@op.pl> 
+- Added possibility of specifying the language in the URL. This is done by adding ?lang=XXX (or &lang=XXX if other variables are specified) to the URL - XXX being the three-letter language code like eng or nor)
+- Added option of setting a Reply-To address when sending out emails to players and contacts. This applies to general emails as well as when sending out character concepts or characters.
+- Added a default MOTD for new installations.
+
+LANGUAGE FILE ADDITIONS
+	$LANG['MISC']['use_replyto'] = "Use Reply-To";
+	$LANG['MISC']['replyto_address'] = "Reply-To Address";
+	$LANG['MISC']['printouts'] = "Printouts";
+	$LANG['MISC']['plaintext'] = "Plaintext";
+	$LANG['MISC']['pdf'] = "PDF (Adobe)";
+	$LANG['MISC']['format'] = "Format";
+	$LANG['MISC']['gamedata'] = "Gamedata";
+	$LANG['MISC']['replace'] = "Replace";
+	$LANG['MISC']['import'] = "Import";
+	$LANG['MISC']['import_from_game'] = "Import from game";
+	$LANG['MISC']['os_version'] = "OS Version";
+	$LANG['MISC']['php_version'] = "PHP Version";
+	$LANG['MISC']['php_extensions'] = 'PHP Extensions';
+	$LANG['MISC']['sql_server_version'] = 'SQL Server Version';
+	$LANG['MISC']['sql_client_version'] = 'SQL Client Version';
+	$LANG['MISC']['sql_host_info'] = 'SQL Host Information';
+	$LANG['MISC']['sql_protocol_version'] = 'SQL Protocol Version';
+	$LANG['MESSAGE']['acquaintances_imported'] = "Acquaintances Imported";
+	$LANG['MESSAGE']['no_acquaintances_to_import'] = "No acquaintances to import";
+	$LANG['MESSAGE']['file_updated'] = "File Updated";
+	$LANG['MESSAGE']['file_update_error'] = "An error was encountered when updating the file.";
+	$LANG['ERROR']['obsolete_file'] = "The file %s was found but is no longer in use, it is recommended that you delete it.";
+	$LANG['ERROR']['obsolete_dir'] = "The %s subdirectory was found but is no longer in use, it is recommended that you delete it and it\'s contents.";
+	$LANG['ERROR']['missing_extension'] = "The PHP-extension %s is not loaded. This extension is required for AKKAR to operate properly.";
+	$LANG['ERROR']['missing_extension_noncrit'] = "The PHP-extension %s is not loaded. This extension is not required and workarounds exists for it, but it is recommended that the extension is loaded instead.";
+	$LANG['CONFTITLE']['use_overlib_fade'] = "Use the fade-function in OverLib";
+	$LANG['CONFEXPLAIN']['use_overlib_fade'] = "This will enable the fade-function from OverLib. If it's enabled, clientside popup-boxes will fade into view rather than just appear.";
+
+LANGUAGE FILE REMOVALS
+	$LANG['MISC']['pdf_printouts']
+	
+BUGS FIXED
+- [FOUND BY] (Tracker Bug#) DESCRIPTION
+- [roy] Fixed missing linebreaks in group info on character sheets.
+- [roy] (#1302213) Fixed erroneous date being shown in list of new or updated files.
+- [roy] Fixed an error in the backup/restore functions that made AKKAR not recognise a valid backup-file in some cases when running on a Windows server.
+- [roy] Fixed some navigation-related bugs in the plot-system.
+- [roy] Fixed the textbox-size increase/decrease-arrows not appearing in several edit-screens (they weren't using the style-defined arrows).
+- [roy] Made AKKAR set PHP's error reporting to ignore notices (this is the default in most PHP installations, but for those where it isn't it would prevent AKKAR from working).
+- [roy] Fixed a navigational bug when going from the list of character concepts to the concept attachments.
+- [ole] Transferring characters didn't work due to an error in the design.
+- [helge] (#1460476) Character concepts could not be sorted.
+- [helge] (#1460480) Characters were always grouped by game in the global list - now they will be sorted by the chosen field with no grouping.
+- [roy] Some characters would produce an error related to foreach() in the character-list if their info didn't match the expected value-type in the template.
+- [helge] (#1460487) Fixed some bugs in the workaround calendar-functions.
+- [roy] File uploads would fail with an empty error if the file was too large for PHP - it will now report the error correctly.
+- [rigmor] There was some debug info left in vispaamelding.php that would display odd results if an organiser tried adding a character.
+- [rigmor] (#1496011) If a default image was anything else than PNG, it wouldn't be caught by get_style_images() if you had no such image in your custom style. PDF creation was especially affected by this.
+
+KNOWN ISSUES
+- There seems to be an elusive bug with to PDF exports. It's related to corrupted or unexptected data entered in database tables, and is therefore very difficult to track down. If you're experiencing any difficulties with PDF exports of any kind, please - PLEASE - post on the AKKAR support-forum and provide as much detail as possible so we can squash this bug.
+
+
+2.2.5
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [helge] PDF exports of characters sometimes printed the player mugshot several times and in some cases overlapping the text (this could happen if your template was made in a specific way, but now it shouldn't happen at all)
+- [helge] PDF group-sheets now include the text "information for members" from the group definition
+- [roy] Fixed a bug where deleting a character would lead to empty entries in certain places related to the character (attachments, plots, groups, etc)
+- [helge/roy] Corrected some visual bugs in printer-friendly views 
+- [helge] Submissions of combined application/character forms would fail and direct the user submitting the form to the login-screen
+- [helge/roy] Changed the way AKKAR keeps track of the user's last activity, resulting in the listing of what's been updated since last login being fixed - again. Really, it should work correctly now, honest ;)
+
+2.2.4
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [roy] Outgoing emails would get mangled and attachments would become unreadable for certain clients (including Google's gmail)
+- [helge] Added workarounds for PHP-installations without exif and/or calendar functions
+- [helge] Fixed issue where installation or upgrade could fail due to lack of NOT NULL in primary key for some table definitions
+- [helge] Images with dot-type fields did not care about style selected
+- [helge] Redundant nl2br() in character suggestions removed
+- [helge] Deleting character concepts from the list of concepts didn't work if the concept title had special characters
+
+2.2.3
+CHANGES
+- Added generation and submission of a combined registration/character form. Character submitted from this form will still be saved as character suggestions, but the player will be assigned to the one submitting the form from the start.
+- Added option of assigning character suggestions to existing players by database reference instead of only by an arbitrary name in a textfield.
+- Added possibility of defining template-fields as internal only, meaning they won't show up in any external form generation or document export (except for internal PDF document).
+- If you're using your own custom language-file (i.e. any other than the supplied english or norwegian files), you'll need to add the following entries:
+		$LANG['MISC']['approved_by'] = "Approved by";
+		$LANG['MISC']['combi_form'] = "Combined Form";
+		$LANG['MISC']['internal'] = "Internal";
+		$LANG['HELPTIP']['internal_field'] = "Checking this box will make the field internal, meaning it will not be included in any exports going out to the players.";
+- Distribution package subdirectory renamed from 'src' to 'akkar'
+
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [helge] Tabindex of generated registration-forms was wrong
+- [helge] README-files now contain information about how to upgrade from previous 2.2 releases (not really a bug, but worth noting - can't believe I didn't think of this sooner)
+- [roy] Added more missing translations.
+- [helge] Fixed double gzip-compression occurring on certain PHP configurations
+- [roy] Corrected the default value of the character status field
+- [roy] Fixed a bug where character suggestion approval could fail in some cases
+- [roy] Fixed a bug where certain registration form data ('listmulti' fields) wasn't saved in the database
+- [emo rei] Template fields of the type 'inline' weren't submitted correctly when submitting an external HTML-form
+- [roy] Increase/Decrease textfield size wasn't working on generated registration-forms
+- [helge] Field-order in the registration lists were shown in the order created instead of the order assigned
+
+2.2.2
+CHANGES
+- Added a robots.txt file to the distribution-files to prevent search-engines from indexing an AKKAR installation (contrary to popular belief, some security can actually be gained through obscurity)
+
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [roy] Submitted registrations would store the mail preference field incorrectly, and hence it appeared as if it was empty in most views.
+- [roy] Added some missing translations (no changes to the language-files)
+
+2.2.1
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [roy] The script receiving the HTML-generated registration-forms was broken, it tried inserting certain fields twice
+- [roy] JavaScript Email-validation would report certain valid address-formats as invalid
+- [helge] Some linebreaking-weirdness was happening in the character and registration views
+
+2.2.0
+CHANGES
+- Project renamed to AKKAR - Avansert Kontroll- og Koordineringssystem for Arrang�rer av Rollespill (eng: Advanced Control- and Coordinationsystem for Organizers of Roleplaygames). Yes, it's a constructed abbreviation ;)
+- Translations implemented. Language-files are placed in the lang/ subdirectory and are automatically detected if their format is correct. Installation-language has been set to English, and the operating language is set in the main configuration within AKKAR.
+- Gone from using tar.gz on mail-attachments to using the more commonly accepted zip-format (LARP'ers in general don't recognize tar.gz, but everyone and his mom recognize a zip-file)
+- Added three template fieldtypes:
+	separator: draws a horizontal line
+	header: prints the defined text in a larger font
+	dots: White Wolf-style attribute selection
+- Added contact-list for managing non-player non-organizer contacts
+- Added subdirectory capabilities to the filesystem
+- Added some basic icons for the filesystem
+- Improved Backup/Restore functions. You can now back up and restore all created content, not just the database (full backup requires the iconv-extension).
+- Added small arrow-icons for list-sortings since IE has a hard time understanding the &dArr; and &uArr; HTML entities.
+- Changed several table structures and names, rendering backups taken on older versions unusable for restore without some manual editing.
+- Made automatic zipcode/region mapping an optional component instead of it always being in use.
+- Added client-side filtering capabilities to most lists
+- Added heaps of  client-side validation functions (still a few more things left to validate clientside, but serverside validation should already be complete)
+- Cleaned up the directory structure somewhat
+- Added PDF exports of characters, acquaintances and groupmembers. RTF is still a possibility but not recommended as PDF is vastly superior and a lot easier to work with from PHP.
+- Added PDF exports of address-labels and envelopes, as well as various character exports with several options.
+- Added global paper format setting (A4, A5, Letter or Legal) for use with PDF exports
+- Extended the style-system. All visual elements, including graphics, are now defined on a per-style basis, making the styles more like what is commonly called themes instead. Information about this can be found in the style.txt file.
+- Added datetime formating settings to the configuration in three levels; long format, medium format and short format.
+- Added extra security in the login-procedure. The password is md5-hashed, and then that hash is md5-hashed together with a random string which is generated uniquely on each login-attempt. This is all done client-side before any data is sent to the server, which means that the client never sends the same string twice as the password. This should make it impossible to steal an encrypted password from the HTTP stream to fake a login.
+- Removed requirement for [title] and [description] ([tittel] and [beskrivelse]) to be present in the character concept mailtext-template, they will get added to the bottom of the mail if they're not in the template.
+- Changed output of entries for the coming week in the user's home view, empty days will not show up at all, and if no entries are found for the coming week the window will reflect that.
+- Fixed a bug with the JavaScript str_replace() function. It now replaces all instances of 'match' with 'replacement' as intended.
+- Added execution-time at the bottom of the page. Mostly useless but sort of nifty anyway ;)
+- Added mugshot-selection of players and organizers.
+- Added gender for players and organizers.
+- Moved from strftime("V") to strftime("W") to determine weeknumber in the calendar (Win32 doesn't support V and listed all weeks as 0)
+- Removed free space on disk in the filesystem and replaced it with total space used for filesystem as well as individually per directory
+- Added the total diskspace in use by AKKAR at the bottom of the page
+- Removed the few things that had to do with support for _character_ pictures as this feature is not yet implemented and might never get implemented due to very limited usefullness. A complete picture-gallery might get implemented at some point instead, which will fullfill the conceptual function this had, and more.
+
+BUGS FIXED
+- [FOUND BY] DESCRIPTION
+- [roy] If the database name had a hyphen in it (-) the backup and selftest would exit with an error
+- [roy] The defined order of the template-fields wasn't used in certain cases
+- [roy] The selection-links when sending Character Concepts was messed up
+- [eskil] Templates weren't always working as they should when generating an HTML registration-form
+- [eskil] Windows doesn't understand the %e (day of month without leading zeros) parameter in strftime() - changed it to %d all over the board. (Update: Date-formats are now set in the config so this is no longer an issue)
+- [roy,helge] Several minor display-bugs
+- [eskil] include-path wasn't working correctly in Win32 environments
+- [eskil] Added port-detection and https-detection to the HTML character- and registration-forms in cases where AKKAR was running over SSL or on a non-standard port
+- [roy] Printer-friendly pages were empty in certain cases
+- [roy] List of registrations got messed up when certain fields were selected
+- [helge] Multiple notes for a single day are now displayed properly in the calendar
+
+2.0.3
+- [FOUND BY] DESCRIPTION
+- [helge] Fixed a bug where file uploads would silently overwrite an existing file with the same name (you won't be allowed to do this anymore)
+- [helge] Fixed a bug that in certain cases let you add Acquaintances without them actually being added
+- [helge] Fixed wordwrapping in the Character Concept window when creating a character based on a concept
+- [helge] Fixed an error concerning name-generation when uploading a picture from the external registrationform
+
+2.0.2
+- [FOUND BY] DESCRIPTION
+- [roy] Fixed a bug where security-notes weren't sent to the administrator
+
+2.0.1
+- [FOUND BY] DESCRIPTION
+- [roy] Fixed a bug with registration confirmations on certain templates
+- [helge] Fixed a bug with linebreaking when editing a Character Concept
+- [helge] Fixed a bug with viewing text on info- and help-icons
+- A hidden field has been removed from the RTF generated characters (status_id)
+- [helge] Possibly fixed a bug with calendar notes (they were marked as created by the wrong person in some cases)
+- [helge] Templates with multi-select fields were showing the unserialized array when editing the field
+
+2.0
+- Initial release. Completely rewritten all the code. Loads of new functions, and probably just as many new bugs, but a extensive bughunt has resulted in most of them being hunted down and anihilated
+
+1.0
+- Fist completed version, internal release only.
+
+0.9.2 - 0.9.9
+- Lots of additions and bugfixes (way too many to list)
+
+0.9.1
+- First RAsLAV with a version-number ;)

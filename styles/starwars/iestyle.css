@@ -1,0 +1,71 @@
+/*
+Denne stilen avviker litt fra HTML 4.01/CSS2-spesifikasjonene, og
+benyttes av Opera og IE - buttonstyle.css brukes av andre nettlesere.
+
+Dette er delt opp for at ting skal se mest mulig likt ut i de fleste
+nettlesere.
+*/
+
+/* Cella i hovedtabellen hvor hovedinnholdet befinner seg */
+td.maincol {
+	height: 400px;
+	font-size: 8pt;
+	vertical-align: top;
+	color: #ffcc00;
+	width: 90%;
+	background: transparent;
+}
+
+/* Tabellen som inneholder navigasjonen */
+table.navtable {
+	width: 100%;
+	text-align: center;
+	border: inset 3px #bababa;
+	background-color: #111111;
+	padding: 0;
+	margin: 0;
+}
+
+table.navtable table {
+	width: 100%;
+}
+
+/* Seksjons-linkene i navigasjonen */
+td.navheader {
+	text-align: center;
+	font-size: 8pt;
+	color: #ffffff;
+	background-color: #494444;
+	border: outset 2px #adaaaa;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+	
+}
+
+/* Knapper. Brukes nesten overalt */
+button {
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: #494444;
+	border: outset 2px #adaaaa;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	font-weight: bold;
+}
+
+/* Røde knapper. Brukes på halvskumle funksjoner */
+button.red {
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: #ad0000;
+	border: outset 2px #ad0000;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	font-weight: bold;
+}
+
+/* Definerer ramme rundt bilder av roller og personer. Størrelsen på bildet defineres i koden. */
+img.foto {
+	border: ridge 2px #cccc99;
+}

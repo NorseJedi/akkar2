@@ -1,0 +1,91 @@
+/*
+###########################################################################
+#                                  AKKAR                                  #
+#                      http://akkar.sourceforge.net/                      #
+#                                                                         #
+#                            -------------------                          #
+#                                style.css                                #
+#                            -------------------                          #
+#                                                                         #
+#   copyright (C) 2004 Roy W. Andersen                                    #
+#   email: ensnared@gmail.com                                             #
+#                                                                         #
+###########################################################################
+
+###########################################################################
+#                                                                         #
+#  This program is free software; you can redistribute it and/or modify   #
+#  it under the terms of the GNU General Public License as published by   #
+#  the Free Software Foundation; either version 2 of the License, or      #
+#  (at your option) any later version.                                    #
+#                                                                         #
+###########################################################################
+*/
+/*
+This stylesheet is used by non-IE and non-Opera browsers, including Firefox and other Gecko-based browsers).
+
+Internet Explorer and Opera use iestyle.css
+*/
+
+/* The main cell of the main table */
+td.maincol {
+	border: inset 3px #013300;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	font-size: 8pt;
+	vertical-align: top;
+	color: #FFCC99;
+	width: 90%;
+	background: #336633;
+}
+
+/* The navbar table */
+table.navtable {
+	width: 140px;
+	text-align: center;
+	border: inset 3px #013300;
+	background-color: #336633;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+/* Section-headers in the navbar */
+td.navheader {
+	text-align: center;
+	font-size: 7pt;
+	color: #FFCC99;
+	background-color: #013300;
+	border: outset 1px #013300;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+}
+
+/* Buttons. Used everywhere. */
+button {
+	text-align: center;
+	font-size: 7pt;
+	color: #FFCC99;
+	background-color: #013300;
+	border: outset 1px #FFCC99;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-weight: bold;
+}
+
+/* Red buttons */
+button.red {
+	color: #FFCC99;
+	background-color: #990000;
+	border: outset 1px #990000;
+}
+
+/* Border around pictures (mainly mugshots, not used for other images) */
+img.foto {
+	border: ridge 2px #013300;
+}

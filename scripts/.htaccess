@@ -1,0 +1,8 @@
+<FilesMatch .php>
+order deny,allow
+deny from all
+</FilesMatch>
+<FilesMatch .js>
+order allow,deny
+allow from all
+</FilesMatch>

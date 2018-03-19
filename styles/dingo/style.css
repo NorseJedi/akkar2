@@ -1,0 +1,71 @@
+/*
+Denne stilen fungerer i tråd med HTML 4.01/CSS2-spesifikasjonene, men
+benyttes ikke av Opera og IE - iespecific_style.css brukes av dem.
+
+Dette er delt opp for at ting skal se mest mulig likt ut i de fleste
+nettlesere.
+*/
+
+/* Cella i hovedtabellen hvor hovedinnholdet befinner seg */
+td.maincol {
+	border: inset 3px #676c56;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	font-size: 8pt;
+	vertical-align: top;
+	color: #c0c0c0;
+	width: 90%;
+	background: #000000;
+}
+
+/* Tabellen som inneholder navigasjonen */
+table.navtable {
+	width: 140px;
+	text-align: center;
+	border: inset 3px #676c56;
+	background-color: #000000;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+/* Seksjons-linkene i navigasjonen */
+td.navheader {
+	text-align: center;
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: #676c56;
+	border: outset 1px #676c56;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+}
+
+/* Knapper. Brukes nesten overalt */
+button {
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: #676c56;
+	border: outset 1px #676c56;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	font-weight: bold;
+}
+
+/* Røde knapper. Brukes på halvskumle funksjoner */
+button.red {
+	font-size: 7pt;
+	color: #ffffff;
+	background-color: #990000;
+	border: outset 1px #990000;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	font-weight: bold;
+}
+
+/* Definerer ramme rundt bilder av roller og personer. Størrelsen på bildet defineres i koden. */
+img.foto {
+	border: ridge 2px #676c56;
+}
