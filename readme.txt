@@ -4,16 +4,15 @@ for Akkar3.
 
 
 To install this version - which you are doing completely at your own risk - you 
-only need to copy the contents of the akkar directory to where you want to 
-install, and then point your browser to the install.php file on your webserver 
-URL.
+can follow the instructions further down of this readme, just think of the downloaded
+and unpacked archive file as the contents of this repository.
 
 No, it's not pretty, and it's old, but it works. Kind of.
 
 
 ###############################################################################
                             AKKAR 2.4
-                  http://akkar.sourceforge.net/
+                       http://akkar.org/
 
 ###############################################################################
 
